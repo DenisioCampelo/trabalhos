@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+         <meta characterSet="utf-8">
+         <title>Vetores array em JavaScript</title>
+    
+    </head>
+    <body>
+        <script type="text/javascript">
+	 
+         var numeros= [];
+         numeros[0]=primeiroNumero();
+         numeros[1]=segundoNumero();
+         var resultadoDivisao = divida(numeros);
+         alert('o resultado da divisão é igual a:' + resultadoDivisao);
+		 
+         /*Essa função não recebe parametros*/
+		 
+         function primeiroNumero(){
+             var numero1 = prompt("Insira o primeiro número:");
+             if(numero1 <0 ){
+             alert("O número precisa ser inteiro e positivo");
+             //Este tipo de retorno,onde a própria função é chamada novamente é conhecida como recursividade.
+             return primeiroNumero(); 
+             }
+             else{
+             return numero1;
+             }
+             }
+		 
+         function segundoNumero(){
+             var numero2 = prompt("Insira o segundo número:");
+             if(numero2<0){
+             alert("O número precisa ser inteiro e positivo");
+             return segundoNumero();
+             }
+             else{
+             return numero2;
+             }
+             }
+             //Esta função recebe como parâmetro um array que contém 2 números que desejamos dividir.
+         function divida(numeros){
+             var resultado= 0;
+             //Os números a serem divididos são acessados através dos índices do array.
+             resultado = numeros[0] / numeros[1];
+             return resultado;
+             }
+
+        </script>
+    </body>
+</html>
